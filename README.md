@@ -4,6 +4,24 @@ Python Mapnik in Docker.
 
 ## Tags
 
+- `3.0.12-ubuntu` : ([Dockerfile](https://github.com/Kotaimen/docker-mapnik/blob/master/Dockerfile))
+    - Base System: 
+        - `ubuntu-zesty` (`17.04`)
+        - `python-3.5`
+        - `cython-0.25.2`
+    - GIS & Cartography:
+        - `gdal-2.1` 
+        - `geos-3.5`
+        - `freetype-2.6.3`
+        - `harfbuzz-1.4.2`
+        - `numpy-1.12.0`
+        - `scipy-0.18.1`
+        - `mapnik-3.0.12` 
+        - `carto-0.9.5`
+    - Imaging:
+        - `imagemagick-6.9.7.4`
+        - `Pillow-4.0.0`
+
 - `3.0.9-ubuntu` : ([Dockerfile](https://github.com/Kotaimen/docker-mapnik/blob/master/Dockerfile))
     - Base System: 
         - `ubuntu-xenial` (`16.04`)
