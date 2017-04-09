@@ -32,9 +32,19 @@ RUN         set -x \
                     python3-gdal \
                     python3-mapnik \
                     \
-                    node-carto
+                    npm
 
-# Patch missing gdal data files:
+#
+# Install carto
+#
+RUN         set -x \
+            # Create a link for node otherwise carto install fails
+            &&  ln -s /usr/bin/nodejs /usr/bin/node \
+            &&  npm install -g carto millstone
+
+#
+# Patch missing gdal data file
+#
 RUN         curl -sSL http://cdn.knrdesign.co/dist/gdal-1.11.3/data/esri_extra.wkt > \
                 /usr/share/gdal/2.1/esri_extra.wkt
 
