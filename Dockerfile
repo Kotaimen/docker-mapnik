@@ -31,6 +31,7 @@ RUN         set -x \
                     python3-skimage \
                     python3-gdal \
                     python3-mapnik \
+                    python3-lxml \
                     \
                     npm
 
