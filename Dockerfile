@@ -1,4 +1,4 @@
-FROM        ubuntu:zesty
+FROM        ubuntu:bionic
 MAINTAINER  Kotaimen <kotaimen.c@gmail.com>
 
 ENV         DEBIAN_FRONTEND noninteractive
@@ -39,13 +39,11 @@ RUN         set -x \
 # Install carto
 #
 RUN         set -x \
-            # Create a link for node otherwise carto install fails
-            &&  ln -s /usr/bin/nodejs /usr/bin/node \
             &&  npm install -g carto millstone
 
 #
 # Patch missing gdal data file
 #
-RUN         curl -sSL http://cdn.knrdesign.co/dist/gdal-1.11.3/data/esri_extra.wkt > \
-                /usr/share/gdal/2.1/esri_extra.wkt
+RUN         curl -sSL https://github.com/OSGeo/gdal/raw/2.2/gdal/data/esri_extra.wkt > \
+                /usr/share/gdal/2.2/esri_extra.wkt
 
